@@ -9,7 +9,6 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
-// MIME types for static assets
 const MIME_TYPES = {
   '.html': 'text/html',
   '.css': 'text/css',
@@ -23,15 +22,12 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  // Normalize URL
   let reqUrl = req.url.split('?')[0];
   if (reqUrl === '/') reqUrl = '/index.html';
-  
-  // Look for files either in root (index.html) or inside public/
-  let filePath;
-  if (reqUrl === '/index.html') {
-    filePath = path.join(__dirname, 'index.html');
-  } else {
+
+  // Check root directory first, then public/
+  let filePath = path.join(__dirname, reqUrl);
+  if (!fs.existsSync(filePath)) {
     filePath = path.join(__dirname, 'public', reqUrl);
   }
 
