@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= data.name %> | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">&lt;<%= data.name.split(' ')[0] %> /&gt;</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="btn-primary-small">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero-section">
+    <div class="hero-content">
+      <span class="badge-status">🟢 Available for projects & internships</span>
+      <h1 class="hero-title">Hi, I'm <span class="highlight"><%= data.name %></span></h1>
+      <h2 class="hero-subtitle"><%= data.role %></h2>
+      <p class="hero-bio"><%= data.bio %></p>
+      
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="<%= data.githubUrl %>" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <div class="card about-card">
+        <p>
+          I am a software developer interested in both systems-level programming and web development. 
+          I enjoy taking challenging computational problems, optimizing logic, and turning ideas into clean, functional applications.
+        </p>
+        <p>
+          Currently focusing on mastering <strong>C/C++</strong> fundamentals alongside modern <strong>Node.js</strong> backend development.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="skills-grid">
+        <% data.skills.forEach(skill => { %>
+          <div class="skill-card">
+            <span class="skill-name"><%= skill.name %></span>
+            <span class="skill-level"><%= skill.level %></span>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <% data.projects.forEach(project => { %>
+          <div class="project-card">
+            <div class="project-header">
+              <span class="folder-icon">📁</span>
+              <div class="project-links">
+                <% if (project.github) { %>
+                  <a href="<%= project.github %>" target="_blank" rel="noopener noreferrer" title="View Code">Code ↗</a>
+                <% } %>
+                <% if (project.demo) { %>
+                  <a href="<%= project.demo %>" target="_blank" rel="noopener noreferrer" class="demo-link" title="Live Preview">Live ↗</a>
+                <% } %>
+              </div>
+            </div>
+            <h3 class="project-title"><%= project.title %></h3>
+            <p class="project-desc"><%= project.description %></p>
+            <div class="project-tech-tags">
+              <% project.tech.forEach(tag => { %>
+                <span class="tech-tag"><%= tag %></span>
+              <% }) %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="card contact-card">
+        <p class="contact-subtext">Have a question, proposal, or want to collaborate? Drop me a message below!</p>
+        
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn-primary full-width">Send Message</button>
+        </form>
+        
+        <div id="form-feedback" class="form-feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built with ❤️ using <strong>Node.js</strong> & <strong>Express</strong></p>
+    <p class="footer-copy">&copy; <%= new Date().getFullYear() %> <%= data.name %>. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

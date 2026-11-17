@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: Change your page title here -->
+  <title>[Your Name] | Developer Portfolio</title>
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       1. NAVIGATION BAR (Sticky top bar with smooth scroll links)
+       ========================================================= -->
+  <header class="header">
+    <nav class="nav-container">
+      <!-- EDIT: Change to your name or initials -->
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>[Your Name]<span class="logo-bracket"> /&gt;</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta-btn">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         2. HERO SECTION
+         ========================================================= -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-tag">
+          <span class="status-dot"></span> Open to beginner opportunities & collaborations
+        </div>
+        
+        <!-- EDIT: Update your headline & role -->
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent-text">[Your Name]</span>.<br>
+          Aspiring <span class="role-text">[Frontend Developer / Software Engineer]</span>.
+        </h1>
+
+        <!-- EDIT: 2-sentence bio highlighting curiosity and eagerness to learn -->
+        <p class="hero-bio">
+          I am a driven beginner developer passionate about solving real-world problems through clean, efficient code. 
+          Constantly curious and eager to learn, I spend my time exploring modern web technologies, building projects, and sharpening my fundamentals.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+          <!-- EDIT: Change href to your resume path e.g. 'resume.pdf' -->
+          <a href="#contact" class="btn btn-outline" id="resume-btn">Download Resume 📄</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. ABOUT ME SECTION
+         ========================================================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">My journey into software development and why I love building</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Placeholder Headshot / Avatar -->
+          <div class="about-image-wrapper">
+            <div class="avatar-placeholder">
+              <!-- Friendly SVG Avatar Placeholder -->
+              <svg class="avatar-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="58" fill="#1b253b" stroke="#38bdf8" stroke-width="3"/>
+                <circle cx="60" cy="46" r="20" fill="#38bdf8" fill-opacity="0.25" stroke="#38bdf8" stroke-width="2"/>
+                <path d="M28 98C28 80.3269 42.3269 66 60 66C77.6731 66 92 80.3269 92 98" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <!-- TIP: Replace this SVG with an <img> tag when you have a photo: 
+                   <img src="/images/headshot.jpg" alt="[Your Name]" class="avatar-img"> -->
+              <span class="avatar-caption">Headshot Placeholder</span>
+            </div>
+          </div>
+
+          <!-- About Narrative -->
+          <div class="about-content">
+            <!-- EDIT: Personal story about why you started learning coding -->
+            <p>
+              My journey into programming began when I discovered the thrill of breaking down complex problems and turning logical instructions into interactive applications. What started as curiosity quickly turned into a dedicated passion for writing clean, structured code.
+            </p>
+            <p>
+              I am currently immersing myself in fundamental computer science principles, system logic, and modern web development. When I am not coding, I enjoy dissecting how everyday digital products work under the hood and challenging myself with algorithmic puzzles.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <span class="highlight-number">🌱</span>
+                <div>
+                  <strong>Growth Mindset</strong>
+                  <p>Committed to daily learning and constructive feedback</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-number">⚡</span>
+                <div>
+                  <strong>Attention to Detail</strong>
+                  <p>Focusing on readable, maintainable, and responsive code</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. PROJECTS SECTION (The Star - 2-Column Responsive Grid)
+         ========================================================= -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Real projects built with focus on logic, usability, and clean architecture</p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- PROJECT CARD 1 -->
+          <article class="project-card">
+            <div class="project-preview">
+              <div class="preview-placeholder">
+                <span class="preview-icon">💻</span>
+                <span class="preview-text">Interactive Problem Solver</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Algorithmic Problem Solver & Visualizer</h3>
+              <!-- 2-sentence summary of the problem it solves -->
+              <p class="project-summary">
+                Addresses the difficulty beginners face when visualizing mathematical algorithms such as prime testing and number theory calculations. Provides an intuitive interface that delivers step-by-step evaluation metrics and execution feedback.
+              </p>
+              <div class="project-tags">
+                <span class="tag">C</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+              </div>
+              <div class="project-links">
+                <!-- EDIT: Update URLs with your live demo and repository links -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>GitHub</span> ↗
+                </a>
+                <a href="#" class="link-btn link-demo">
+                  <span>Live Demo</span> ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 2 -->
+          <article class="project-card">
+            <div class="project-preview">
+              <div class="preview-placeholder">
+                <span class="preview-icon">⚡</span>
+                <span class="preview-text">Node.js Web Server</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Personal Developer Portfolio</h3>
+              <!-- 2-sentence summary of the problem it solves -->
+              <p class="project-summary">
+                Solves the need for a lightweight, performant personal showcase with a zero-bloat server architecture. Features a responsive design, generous whitespace, and an interactive contact interface.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>GitHub</span> ↗
+                </a>
+                <a href="/" class="link-btn link-demo">
+                  <span>Live Demo</span> ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 3 -->
+          <article class="project-card">
+            <div class="project-preview">
+              <div class="preview-placeholder">
+                <span class="preview-icon">📝</span>
+                <span class="preview-text">CLI Productivity Utility</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Terminal Task & Habit Tracker</h3>
+              <!-- 2-sentence summary of the problem it solves -->
+              <p class="project-summary">
+                Eliminates the distraction of heavyweight GUI productivity apps for terminal-centric developers. Enables quick task creation, priority sorting, and daily streak tracking directly through command-line commands.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">JSON Storage</span>
+                <span class="tag">Git</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn">
+                  <span>GitHub</span> ↗
+                </a>
+                <a href="#" class="link-btn link-demo">
+                  <span>Live Demo</span> ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. SKILLS & TOOLS (Categorized Tag Cloud)
+         ========================================================= -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">Categorized breakdown of my current toolkit and what I am actively mastering</p>
+        </div>
+
+        <div class="skills-wrapper">
+          <!-- Category 1: Core Skills -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">🚀</span>
+              <div>
+                <h3 class="category-title">Core Skills</h3>
+                <p class="category-sub">Technologies I work with comfortably and build projects in</p>
+              </div>
+            </div>
+            <div class="tag-cloud">
+              <span class="skill-pill core">HTML5</span>
+              <span class="skill-pill core">CSS3 / Flexbox / Grid</span>
+              <span class="skill-pill core">JavaScript (ES6+)</span>
+              <span class="skill-pill core">C Programming</span>
+              <span class="skill-pill core">Node.js Basics</span>
+              <span class="skill-pill core">Git & GitHub</span>
+              <span class="skill-pill core">VS Code & Git Bash</span>
+              <span class="skill-pill core">Responsive Web Design</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Currently Learning -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">📚</span>
+              <div>
+                <h3 class="category-title">Currently Learning</h3>
+                <p class="category-sub">Tools, frameworks, and subjects I am actively studying</p>
+              </div>
+            </div>
+            <div class="tag-cloud">
+              <span class="skill-pill learning">React.js</span>
+              <span class="skill-pill learning">Data Structures & Algorithms</span>
+              <span class="skill-pill learning">Tailwind CSS</span>
+              <span class="skill-pill learning">RESTful API Design</span>
+              <span class="skill-pill learning">SQL & Relational Databases</span>
+              <span class="skill-pill learning">System Performance & Memory</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. CONTACT & FOOTER ("Let's Connect" CTA + Copy Email)
+         ========================================================= -->
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="contact-title">Let's Connect!</h2>
+          <p class="contact-subtitle">
+            Whether you have an opportunity, want to collaborate on a beginner-friendly project, or simply want to say hello — my inbox is always open.
+          </p>
+
+          <div class="contact-actions">
+            <!-- EDIT: Replace with your actual email address -->
+            <a href="mailto:your.email@example.com" class="btn btn-primary" id="email-link">
+              ✉️ Send Email
+            </a>
+            
+            <!-- Interactive Copy Email Button -->
+            <button type="button" class="btn btn-outline" id="copy-email-btn" data-email="your.email@example.com">
+              📋 <span id="copy-text">Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Social Links with Clean Icons -->
+          <div class="social-links">
+            <!-- EDIT: Add your profile links -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email Link">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>Designed & built by <strong>[Your Name]</strong> with clean HTML, CSS & Node.js</p>
+      <p class="copyright">&copy; 2026 [Your Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
