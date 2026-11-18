@@ -3,329 +3,627 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kompalli Shashank Nag | Aspiring Software Engineer</title>
+  <title>KOMPALLI SHASHANK NAG // CSE (IoT) - BIT BANGALORE</title>
   
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- High-Tech Display & Monospace Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="hud-body">
 
-  <!-- Canvas for the Sparkly Cursor Trail -->
-  <canvas id="sparkle-canvas"></canvas>
+  <!-- Interactive HUD Sparkle & Crosshair Canvas -->
+  <canvas id="hud-canvas"></canvas>
 
-  <!-- Ambient Background Glows for Glassmorphism Effect -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
-  <div class="ambient-glow glow-3"></div>
+  <!-- CRT Scanline & Grain Overlay -->
+  <div class="crt-overlay"></div>
+
+  <!-- HUD Viewport Perimeter Frame & Micro-Coordinates -->
+  <div class="hud-frame top-left">SYS_NODE: BLR_BIT_01 // 12.9716° N, 77.5946° E</div>
+  <div class="hud-frame top-right">DIAG_STATE: NOMINAL [0x7F]</div>
+  <div class="hud-frame bottom-left">PROTOCOL: MQTT/TCP // BUFFER: STABLE</div>
+  <div class="hud-frame bottom-right">SEC_LVL: 04 // CSE_IOT</div>
+
+  <!-- Corner Tech Brackets -->
+  <div class="corner-bracket br-tl"></div>
+  <div class="corner-bracket br-tr"></div>
+  <div class="corner-bracket br-bl"></div>
+  <div class="corner-bracket br-br"></div>
+
+  <!-- Ambient Blade Runner Backdrop Glows -->
+  <div class="hud-glow ambient-cyan"></div>
+  <div class="hud-glow ambient-amber"></div>
 
   <!-- =========================================================
-       1. NAVIGATION BAR (Glassmorphism Sticky Bar)
+       1. TOP TELEMETRY NAVBAR
        ========================================================= -->
-  <header class="header glass-nav">
-    <nav class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>Shashank<span class="logo-bracket"> /&gt;</span>
-      </a>
+  <header class="hud-header">
+    <div class="nav-wrapper">
+      <div class="nav-brand">
+        <div class="brand-emblem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke="#00F0FF" stroke-width="2" fill="rgba(0, 240, 255, 0.1)"/>
+            <circle cx="12" cy="12" r="3.5" fill="#F59E0B"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="callsign">KOMPALLI SHASHANK NAG</span>
+          <span class="sub-callsign">// CSE (IoT) • BIT_BANGALORE</span>
+        </div>
+      </div>
 
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact" class="nav-cta-btn">Contact</a></li>
-      </ul>
-    </nav>
+      <div class="nav-telemetry">
+        <span class="status-indicator">
+          <span class="pulse-beacon"></span>
+          <span class="status-label">STATUS: <span class="cyan-text">OPEN_TO_COLLAB</span></span>
+        </span>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#about" class="hud-link"><span class="link-idx">01</span>ABOUT</a>
+        <a href="#projects" class="hud-link"><span class="link-idx">02</span>PROJECTS</a>
+        <a href="#skills" class="hud-link"><span class="link-idx">03</span>MATRIX</a>
+        <a href="#contact" class="hud-btn-nav"><span class="btn-corner"></span>CONNECT //&gt;</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="hud-main">
     <!-- =========================================================
-         2. HERO SECTION
+         2. SPLIT-SCREEN HERO SECTION
          ========================================================= -->
-    <section id="hero" class="hero-section">
-      <div class="container hero-container">
-        <div class="hero-tag glass-pill">
-          <span class="status-dot"></span> Based in Bangalore, India 🇮🇳 • Open to opportunities
-        </div>
+    <section id="hero" class="hero-hud">
+      <div class="hud-container hero-grid">
         
-        <h1 class="hero-title">
-          Hi, I'm <span class="accent-text">Kompalli Shashank Nag</span>.<br>
-          <span class="role-text">Aspiring Software Engineer & CS Student</span>.
-        </h1>
-
-        <p class="hero-bio">
-          Passionate about low-level C programming, algorithms, and full-stack web development. 
-          Constantly exploring systems design, optimizing computational logic, and building impactful digital experiences.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work ↓</a>
-          <a href="#contact" class="btn btn-glass">Get in Touch ✨</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         3. ABOUT ME SECTION
-         ========================================================= -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">A glimpse into my background, curiosity, and code</p>
-        </div>
-
-        <div class="about-grid">
-          <!-- Glassmorphic Avatar Card -->
-          <div class="about-image-wrapper">
-            <div class="avatar-card glass-card">
-              <div class="avatar-svg-container">
-                <svg class="avatar-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="60" cy="60" r="58" fill="rgba(56, 189, 248, 0.08)" stroke="#38bdf8" stroke-width="2.5"/>
-                  <circle cx="60" cy="46" r="20" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="2"/>
-                  <path d="M28 98C28 80.3269 42.3269 66 60 66C77.6731 66 92 80.3269 92 98" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <span class="avatar-name">Kompalli Shashank Nag</span>
-              <span class="avatar-location">📍 Bangalore, India</span>
-            </div>
+        <!-- Left: Mission Statement & Directives -->
+        <div class="hero-briefing">
+          <div class="sys-badge">
+            <span class="badge-dot"></span>
+            <span>SYSTEM DIRECTIVE: HARDWARE & SOFTWARE CONVERGENCE</span>
           </div>
 
-          <!-- About Narrative -->
-          <div class="about-content glass-card">
-            <p>
-              My journey into programming is driven by an obsession with understanding how computers work from the ground up. Whether it is managing memory and analyzing pointer arithmetic in <strong>C</strong>, or crafting responsive interfaces on the web, I thrive on writing clean, efficient, and maintainable software.
-            </p>
-            <p>
-              Currently, I am deepening my knowledge in <strong>Data Structures, Algorithms</strong>, and low-level system performance while expanding my full-stack web capabilities with modern JavaScript and Node.js.
-            </p>
-            <div class="about-highlights">
-              <div class="highlight-item glass-inner">
-                <span class="highlight-number">⚡</span>
-                <div>
-                  <strong>Low-Level & Algorithms</strong>
-                  <p>Passionate about efficiency, time complexity, and memory control in C.</p>
-                </div>
-              </div>
-              <div class="highlight-item glass-inner">
-                <span class="highlight-number">🚀</span>
-                <div>
-                  <strong>Continuous Builder</strong>
-                  <p>Committed to daily code progression, real projects, and modern tooling.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <h1 class="hero-glitch-title">
+            ENGINEERING <span class="amber-highlight">CONNECTED SYSTEMS</span><br>
+            FOR THE NEXT <span class="cyan-highlight">FRONTIER.</span>
+          </h1>
 
-    <!-- =========================================================
-         4. PROJECTS SECTION (The Star - 2-Column Responsive Grid)
-         ========================================================= -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Featured Projects</h2>
-          <p class="section-subtitle">Real-world applications focusing on algorithmic logic and performance</p>
-        </div>
-
-        <div class="projects-grid">
-          
-          <!-- PROJECT CARD 1: C Algorithms -->
-          <article class="project-card glass-card">
-            <div class="project-preview">
-              <div class="preview-placeholder">
-                <span class="preview-icon">⚙️</span>
-                <span class="preview-text">Systems & Algorithms</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">C Number Theory & Prime Algorithms</h3>
-              <p class="project-summary">
-                A high-efficiency suite of number-theoretic algorithm implementations in C focusing on optimized prime verification, factorization, and time complexity reduction.
-              </p>
-              <div class="project-tags">
-                <span class="tag">C</span>
-                <span class="tag">Algorithms</span>
-                <span class="tag">Number Theory</span>
-                <span class="tag">Optimization</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>GitHub</span> ↗
-                </a>
-                <span class="link-badge">Active Dev</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT CARD 2: Developer Portfolio -->
-          <article class="project-card glass-card">
-            <div class="project-preview">
-              <div class="preview-placeholder">
-                <span class="preview-icon">✨</span>
-                <span class="preview-text">Production Web Showcase</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Minimalist Developer Portfolio</h3>
-              <p class="project-summary">
-                High-performance, responsive personal website featuring a custom glassmorphic UI, dynamic particle cursor trails, and continuous automated deployment on Vercel.
-              </p>
-              <div class="project-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3 (Glassmorphism)</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Vercel</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Progmetalisking/My-Portfolio" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>GitHub</span> ↗
-                </a>
-                <a href="/" class="link-btn link-demo">
-                  <span>Live Site</span> ↗
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT CARD 3: CLI Utility -->
-          <article class="project-card glass-card">
-            <div class="project-preview">
-              <div class="preview-placeholder">
-                <span class="preview-icon">💻</span>
-                <span class="preview-text">Command-Line Utility</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Terminal Task & Productivity CLI</h3>
-              <p class="project-summary">
-                A lightweight terminal productivity tool designed for developers to manage workflow deadlines, task priorities, and habit tracking directly from the shell.
-              </p>
-              <div class="project-tags">
-                <span class="tag">C</span>
-                <span class="tag">Bash</span>
-                <span class="tag">CLI</span>
-                <span class="tag">Linux</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="link-btn">
-                  <span>GitHub</span> ↗
-                </a>
-                <span class="link-badge in-progress">In Progress</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         5. SKILLS & TOOLS (Categorized Glass Tag Clouds)
-         ========================================================= -->
-    <section id="skills" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Skills & Technologies</h2>
-          <p class="section-subtitle">Technologies in my active toolkit alongside areas of continuous study</p>
-        </div>
-
-        <div class="skills-wrapper">
-          <!-- Core Skills -->
-          <div class="skill-category-card glass-card">
-            <div class="category-header">
-              <span class="category-icon">🚀</span>
-              <div>
-                <h3 class="category-title">Core Skills</h3>
-                <p class="category-sub">Languages and tools I work with comfortably</p>
-              </div>
-            </div>
-            <div class="tag-cloud">
-              <span class="skill-pill core">C</span>
-              <span class="skill-pill core">HTML5</span>
-              <span class="skill-pill core">CSS3 (Modern Layouts)</span>
-              <span class="skill-pill core">JavaScript (ES6+)</span>
-              <span class="skill-pill core">Git & GitHub</span>
-              <span class="skill-pill core">VS Code</span>
-              <span class="skill-pill core">Git Bash</span>
-              <span class="skill-pill core">Vercel Deployment</span>
-            </div>
-          </div>
-
-          <!-- Currently Learning -->
-          <div class="skill-category-card glass-card">
-            <div class="category-header">
-              <span class="category-icon">📚</span>
-              <div>
-                <h3 class="category-title">Currently Learning</h3>
-                <p class="category-sub">Advanced subjects and technologies in progress</p>
-              </div>
-            </div>
-            <div class="tag-cloud">
-              <span class="skill-pill learning">Data Structures & Algorithms</span>
-              <span class="skill-pill learning">Memory Management</span>
-              <span class="skill-pill learning">Node.js Basics</span>
-              <span class="skill-pill learning">Linux Environment</span>
-              <span class="skill-pill learning">Systems Architecture</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         6. CONTACT & FOOTER ("Let's Connect" CTA + Copy Email)
-         ========================================================= -->
-    <section id="contact" class="section section-contact">
-      <div class="container">
-        <div class="contact-box glass-card">
-          <h2 class="contact-title">Let's Connect!</h2>
-          <p class="contact-subtitle">
-            Whether you want to collaborate on a C algorithm project, discuss computer science, or share opportunities — my inbox is always open.
+          <p class="hero-manifesto">
+            I am a 1st-year <strong>Computer Science & Engineering (IoT)</strong> undergraduate at <strong>Bangalore Institute of Technology (BIT Bangalore)</strong>. 
+            I bridge low-level C programming, embedded microcontrollers, and responsive cloud software to architect resilient edge infrastructure.
           </p>
 
-          <div class="contact-actions">
-            <!-- Direct Email Link -->
-            <a href="mailto:shashanknagkompalli@gmail.com" class="btn btn-primary" id="email-link">
-              ✉️ Send Email
-            </a>
-            
-            <!-- Interactive Copy Email Button -->
-            <button type="button" class="btn btn-glass" id="copy-email-btn" data-email="shashanknagkompalli@gmail.com">
-              📋 <span id="copy-text">Copy Email</span>
-            </button>
+          <div class="hero-telemetry-strip">
+            <div class="telemetry-cell">
+              <span class="cell-label">ACADEMIC NODE</span>
+              <span class="cell-val">BIT Bengaluru</span>
+            </div>
+            <div class="telemetry-cell">
+              <span class="cell-label">CORE DOMAIN</span>
+              <span class="cell-val">IoT & Embedded C</span>
+            </div>
+            <div class="telemetry-cell">
+              <span class="cell-label">SYS UPTIME</span>
+              <span class="cell-val" id="uptime-counter">428h:14m:22s</span>
+            </div>
           </div>
 
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              <span>github.com/Progmetalisking</span>
+          <div class="hero-actions">
+            <a href="#projects" class="hud-btn primary">
+              <span class="btn-crosshair"></span>
+              INITIALIZE PROJECTS //&gt;
             </a>
-
-            <a href="mailto:shashanknagkompalli@gmail.com" class="social-icon" aria-label="Email Link">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <span>shashanknagkompalli@gmail.com</span>
+            <a href="#contact" class="hud-btn outline" id="dossier-btn">
+              <span class="btn-crosshair"></span>
+              DOWNLOAD DOSSIER [CV]
             </a>
           </div>
         </div>
+
+        <!-- Right: HackerRank-Style Interactive Telemetry & Code Widget -->
+        <div class="hero-terminal-wrapper">
+          <div class="terminal-card">
+            <!-- Window Bar -->
+            <div class="terminal-header">
+              <div class="terminal-tabs">
+                <button class="tab-btn active" data-tab="telemetry">
+                  <span class="tab-dot live"></span> telemetry_stream.log
+                </button>
+                <button class="tab-btn" data-tab="cpp">
+                  esp32_sensor_grid.cpp
+                </button>
+                <button class="tab-btn" data-tab="python">
+                  edge_analytics.py
+                </button>
+              </div>
+              <div class="terminal-ctrls">
+                <span class="hud-pill-tag">LIVE_EDGE</span>
+              </div>
+            </div>
+
+            <!-- Tab Content 1: Live Simulated IoT Telemetry Feed -->
+            <div class="terminal-viewport active" id="tab-telemetry">
+              <div class="telemetry-hud-feed" id="telemetry-feed">
+                <!-- Dynamically populated streaming logs -->
+              </div>
+              <div class="terminal-controls-bar">
+                <button class="hud-action-btn" id="ping-node-btn">⚡ PING BIT_IOT_NODE</button>
+                <span class="ping-stats" id="ping-result">RTT: 14ms • LOSS: 0.0%</span>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: C++ Embedded Code Snippet -->
+            <div class="terminal-viewport" id="tab-cpp">
+              <pre class="code-block"><code><span class="c-cmt">// BIT Bangalore IoT Lab: Autonomous Edge Node</span>
+<span class="c-key">#include</span> <span class="c-str">&lt;WiFi.h&gt;</span>
+<span class="c-key">#include</span> <span class="c-str">&lt;PubSubClient.h&gt;</span>
+
+<span class="c-type">void</span> <span class="c-func">transmit_telemetry</span>(<span class="c-type">float</span> temp, <span class="c-type">float</span> hum) {
+  <span class="c-type">char</span> payload[<span class="c-num">96</span>];
+  snprintf(payload, <span class="c-key">sizeof</span>(payload),
+    <span class="c-str">"{\"node\":\"BIT_CSE_IOT_01\",\"temp\":%.2f,\"hum\":%.2f,\"status\":\"NOMINAL\"}"</span>,
+    temp, hum
+  );
+  mqttClient.<span class="c-func">publish</span>(<span class="c-str">"bit/blr/telemetry/nodes"</span>, payload);
+}</code></pre>
+            </div>
+
+            <!-- Tab Content 3: Python Analytics Snippet -->
+            <div class="terminal-viewport" id="tab-python">
+              <pre class="code-block"><code><span class="c-cmt"># Edge Telemetry Anomaly Detection Filter</span>
+<span class="c-key">import</span> numpy <span class="c-key">as</span> np
+
+<span class="c-key">def</span> <span class="c-func">detect_sensor_drift</span>(readings, threshold=<span class="c-num">2.8</span>):
+    mean, std = np.<span class="c-func">mean</span>(readings), np.<span class="c-func">std</span>(readings)
+    z_scores = [(x - mean) / (std + <span class="c-num">1e-5</span>) <span class="c-key">for</span> x <span class="c-key">in</span> readings]
+    <span class="c-key">return</span> [idx <span class="c-key">for</span> idx, z <span class="c-key">in</span> <span class="c-func">enumerate</span>(z_scores) <span class="c-key">if</span> abs(z) &gt; threshold]</code></pre>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. SELECTED WORKS / PROJECTS GRID (Filterable HUD Grid)
+         ========================================================= -->
+    <section id="projects" class="hud-section">
+      <div class="hud-container">
+        
+        <div class="section-title-wrap">
+          <div class="section-meta">INDEX_02 // SYSTEM BUILDS</div>
+          <h2 class="section-heading">SELECTED WORKS & RESEARCH NODES</h2>
+          <div class="heading-line"></div>
+        </div>
+
+        <!-- HackerRank-Style Filter Controls -->
+        <div class="filter-controls">
+          <span class="filter-label">FILTER_ARRAY:</span>
+          <button class="filter-btn active" data-filter="all">[ ALL_PROJECTS ]</button>
+          <button class="filter-btn" data-filter="iot">[ IOT / HARDWARE ]</button>
+          <button class="filter-btn" data-filter="software">[ SOFTWARE & ALGO ]</button>
+        </div>
+
+        <div class="projects-hud-grid">
+          
+          <!-- PROJECT 1: Smart Campus Node -->
+          <article class="project-hud-card" data-category="iot">
+            <div class="card-edge-tag">NODE_01 // IOT</div>
+            <div class="project-visual-badge">
+              <svg viewBox="0 0 100 100" class="isometric-svg">
+                <polygon points="50,15 90,38 90,78 50,98 10,78 10,38" stroke="#00F0FF" stroke-width="2" fill="rgba(0, 240, 255, 0.06)"/>
+                <polygon points="50,15 90,38 50,60 10,38" stroke="#F59E0B" stroke-width="1.5" fill="rgba(245, 158, 11, 0.1)"/>
+                <line x1="50" y1="60" x2="50" y2="98" stroke="#00F0FF" stroke-width="2"/>
+                <circle cx="50" cy="40" r="5" fill="#00F0FF"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-name">Smart Campus Environmental Node</h3>
+                <span class="tech-spec-tag">ESP32 • FREE_RTOS</span>
+              </div>
+              <p class="project-desc">
+                Engineered an ambient multi-sensor IoT node designed for university labs to track atmospheric temperature, air quality metrics, and lab occupancy. Streams payload bursts over MQTT with dynamic power throttling.
+              </p>
+              <div class="tech-tags">
+                <span class="t-tag">C++</span>
+                <span class="t-tag">ESP32</span>
+                <span class="t-tag">MQTT</span>
+                <span class="t-tag">FreeRTOS</span>
+                <span class="t-tag">Sensors</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="hud-card-link">
+                  <span>SOURCE_REPO</span> ↗
+                </a>
+                <span class="status-pill active-lab">LAB_PROTOTYPE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: C Prime & Number Theory Engine -->
+          <article class="project-hud-card" data-category="software">
+            <div class="card-edge-tag">NODE_02 // SYSTEM</div>
+            <div class="project-visual-badge">
+              <svg viewBox="0 0 100 100" class="isometric-svg">
+                <rect x="20" y="20" width="60" height="60" stroke="#F59E0B" stroke-width="2" fill="rgba(245, 158, 11, 0.08)"/>
+                <line x1="20" y1="50" x2="80" y2="50" stroke="#00F0FF" stroke-width="1.5"/>
+                <line x1="50" y1="20" x2="50" y2="80" stroke="#00F0FF" stroke-width="1.5"/>
+                <circle cx="50" cy="50" r="8" fill="#FF2A54" fill-opacity="0.7"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-name">C Number Theory & Prime Engine</h3>
+                <span class="tech-spec-tag">C • TIME_OPTIMIZED</span>
+              </div>
+              <p class="project-desc">
+                High-throughput mathematical evaluation engine built in C, implementing segmented sieves, Fermat primality testing, and prime factorization with zero runtime dependencies and optimized bitwise storage.
+              </p>
+              <div class="tech-tags">
+                <span class="t-tag">C</span>
+                <span class="t-tag">Algorithms</span>
+                <span class="t-tag">Number Theory</span>
+                <span class="t-tag">Bitwise Ops</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="hud-card-link">
+                  <span>SOURCE_REPO</span> ↗
+                </a>
+                <span class="status-pill verified">OPTIMIZED // O(sqrt(N))</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Developer HUD Portfolio -->
+          <article class="project-hud-card" data-category="software">
+            <div class="card-edge-tag">NODE_03 // WEB_HUD</div>
+            <div class="project-visual-badge">
+              <svg viewBox="0 0 100 100" class="isometric-svg">
+                <polygon points="50,10 95,50 50,90 5,50" stroke="#00F0FF" stroke-width="2" fill="rgba(0, 240, 255, 0.05)"/>
+                <polygon points="50,25 75,50 50,75 25,50" stroke="#F59E0B" stroke-width="1.5" fill="rgba(245, 158, 11, 0.1)"/>
+                <circle cx="50" cy="50" r="4" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-name">Cyberpunk Telemetry Portfolio</h3>
+                <span class="tech-spec-tag">VERCEL • 60FPS</span>
+              </div>
+              <p class="project-desc">
+                Borderline-professional developer portfolio themed as a Blade Runner HUD. Built with zero-dependency CSS glassmorphism, responsive canvas particle telemetry, live simulator widgets, and automated CI/CD on Vercel.
+              </p>
+              <div class="tech-tags">
+                <span class="t-tag">HTML5</span>
+                <span class="t-tag">CSS3 (HUD)</span>
+                <span class="t-tag">JavaScript</span>
+                <span class="t-tag">Vercel</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Progmetalisking/My-Portfolio" target="_blank" rel="noopener noreferrer" class="hud-card-link">
+                  <span>SOURCE_REPO</span> ↗
+                </a>
+                <a href="/" class="hud-card-link active-link">
+                  <span>LIVE_SYS</span> ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Terminal Task CLI -->
+          <article class="project-hud-card" data-category="software">
+            <div class="card-edge-tag">NODE_04 // CLI</div>
+            <div class="project-visual-badge">
+              <svg viewBox="0 0 100 100" class="isometric-svg">
+                <rect x="15" y="25" width="70" height="50" rx="4" stroke="#00F0FF" stroke-width="2" fill="rgba(13, 27, 34, 0.7)"/>
+                <path d="M25 45 L35 50 L25 55" stroke="#F59E0B" stroke-width="2" fill="none"/>
+                <line x1="42" y1="55" x2="55" y2="55" stroke="#00F0FF" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="project-content">
+              <div class="project-header-row">
+                <h3 class="project-name">Terminal Task & Telemetry CLI</h3>
+                <span class="tech-spec-tag">UNIX • POSIX</span>
+              </div>
+              <p class="project-desc">
+                Minimalist UNIX command-line productivity tool crafted for developers who operate inside headless SSH sessions. Supports sub-millisecond priority tagging, local JSON persistence, and shell automation scripts.
+              </p>
+              <div class="tech-tags">
+                <span class="t-tag">C</span>
+                <span class="t-tag">Bash</span>
+                <span class="t-tag">Linux API</span>
+                <span class="t-tag">POSIX</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="hud-card-link">
+                  <span>SOURCE_REPO</span> ↗
+                </a>
+                <span class="status-pill in-dev">IN_DEVELOPMENT</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. SKILLS & TECH MATRIX (HackerRank-Style Progress Meters)
+         ========================================================= -->
+    <section id="skills" class="hud-section alt-bg">
+      <div class="hud-container">
+        
+        <div class="section-title-wrap">
+          <div class="section-meta">INDEX_03 // PROFICIENCY_MATRIX</div>
+          <h2 class="section-heading">TECHNICAL CAPABILITY & BENCHMARKS</h2>
+          <div class="heading-line"></div>
+        </div>
+
+        <div class="skills-matrix-wrapper">
+          <!-- Matrix Category 1 -->
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <span class="m-icon">⚡</span>
+              <div>
+                <h3 class="m-title">Embedded & IoT Systems</h3>
+                <span class="m-sub">Hardware microcontrollers & peripheral communication</span>
+              </div>
+            </div>
+            <div class="meter-list">
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">Embedded C / Microcontroller Logic</span>
+                  <span class="meter-val">85% [PROFICIENT]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 85%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">ESP32 / Arduino Architecture</span>
+                  <span class="meter-val">80% [STABLE]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 80%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">Sensors (DHT, Ultrasonic, I2C / SPI)</span>
+                  <span class="meter-val">75% [OPERATIONAL]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 75%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">MQTT & Telemetry Protocols</span>
+                  <span class="meter-val">70% [EXPLORING]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 70%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matrix Category 2 -->
+          <div class="matrix-card">
+            <div class="matrix-header">
+              <span class="m-icon">⚙️</span>
+              <div>
+                <h3 class="m-title">Languages & Foundations</h3>
+                <span class="m-sub">Algorithms, data structures & systems architecture</span>
+              </div>
+            </div>
+            <div class="meter-list">
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">C Programming (Memory & Pointers)</span>
+                  <span class="meter-val">90% [ADVANCED]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 90%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">C++ / Object-Oriented Principles</span>
+                  <span class="meter-val">75% [STEADY]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 75%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">Python (Edge Scripting & Logic)</span>
+                  <span class="meter-val">70% [PRACTICING]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 70%;"></div></div>
+              </div>
+
+              <div class="meter-item">
+                <div class="meter-meta">
+                  <span class="meter-name">Data Structures & Big-O Analysis</span>
+                  <span class="meter-val">75% [IN_PROGRESS]</span>
+                </div>
+                <div class="progress-track"><div class="progress-bar" style="width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matrix Category 3 -->
+          <div class="matrix-card full-width-card">
+            <div class="matrix-header">
+              <span class="m-icon">🛠️</span>
+              <div>
+                <h3 class="m-title">Web, Toolchain & Active Explorations</h3>
+                <span class="m-sub">DevOps, modern web standards & next-horizon technologies</span>
+              </div>
+            </div>
+            <div class="badge-cluster">
+              <div class="skill-hud-chip verified">
+                <span class="chip-state">✓</span> Git & GitHub (CI/CD Workflows)
+              </div>
+              <div class="skill-hud-chip verified">
+                <span class="chip-state">✓</span> Linux / Unix Shell (Bash scripting)
+              </div>
+              <div class="skill-hud-chip verified">
+                <span class="chip-state">✓</span> HTML5 & Modern CSS3 HUD Layouts
+              </div>
+              <div class="skill-hud-chip verified">
+                <span class="chip-state">✓</span> JavaScript (ES6+ Asynchronous APIs)
+              </div>
+              <div class="skill-hud-chip verified">
+                <span class="chip-state">✓</span> Vercel Cloud Architecture
+              </div>
+              <div class="skill-hud-chip exploring">
+                <span class="chip-state">⚡</span> RISC-V Architecture
+              </div>
+              <div class="skill-hud-chip exploring">
+                <span class="chip-state">⚡</span> Real-Time OS (RTOS)
+              </div>
+              <div class="skill-hud-chip exploring">
+                <span class="chip-state">⚡</span> KiCAD PCB Layouts
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. ABOUT & BIT BANGALORE LOG ("Operator Profile")
+         ========================================================= -->
+    <section id="about" class="hud-section">
+      <div class="hud-container">
+        
+        <div class="section-title-wrap">
+          <div class="section-meta">INDEX_04 // OPERATOR_LOG</div>
+          <h2 class="section-heading">OPERATOR PROFILE & ACADEMIC DOSSIER</h2>
+          <div class="heading-line"></div>
+        </div>
+
+        <div class="operator-profile-card">
+          <div class="operator-header">
+            <div class="operator-avatar-hud">
+              <!-- Geometric Avatar Wireframe -->
+              <svg width="90" height="90" viewBox="0 0 100 100" fill="none">
+                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="#00F0FF" stroke-width="2" fill="rgba(0, 240, 255, 0.05)"/>
+                <circle cx="50" cy="40" r="16" stroke="#F59E0B" stroke-width="2" fill="rgba(245, 158, 11, 0.1)"/>
+                <path d="M26 80 Q50 60 74 80" stroke="#00F0FF" stroke-width="2" fill="none"/>
+              </svg>
+              <div class="avatar-tag">ID: 2026_BIT_CSE_IOT</div>
+            </div>
+
+            <div class="operator-info">
+              <span class="operator-codename">OPERATOR: KOMPALLI SHASHANK NAG</span>
+              <h3 class="operator-dept">1st Year CSE (Internet of Things)</h3>
+              <p class="operator-inst">📍 Bangalore Institute of Technology (BIT), VV Puram, Bengaluru, India</p>
+            </div>
+          </div>
+
+          <div class="operator-dossier-body">
+            <p>
+              Situated at the heart of India's Silicon Valley in Bengaluru, I am pursuing my undergraduate engineering degree in 
+              <strong>Computer Science & Engineering (IoT)</strong> at <strong>Bangalore Institute of Technology</strong>.
+            </p>
+            <p>
+              My engineering philosophy revolves around hardware-software duality: software becomes significantly more powerful when anchored to real-world physical nodes, microcontrollers, and low-latency communication buses. I spend my hours in academic labs experimenting with C pointers, signal integrity, and high-performance logic.
+            </p>
+
+            <div class="dossier-grid">
+              <div class="dossier-item">
+                <span class="d-label">INSTITUTION</span>
+                <span class="d-val">Bangalore Institute of Technology</span>
+              </div>
+              <div class="dossier-item">
+                <span class="d-label">DEPARTMENT</span>
+                <span class="d-val">CSE (Internet of Things)</span>
+              </div>
+              <div class="dossier-item">
+                <span class="d-label">ACADEMIC YEAR</span>
+                <span class="d-val">1st Year Undergraduate (2026 Batch)</span>
+              </div>
+              <div class="dossier-item">
+                <span class="d-label">PRIMARY INTERESTS</span>
+                <span class="d-val">Embedded C, Microcontrollers, Distributed IoT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. CONTACT TERMINAL FOOTER
+         ========================================================= -->
+    <section id="contact" class="hud-section contact-section">
+      <div class="hud-container">
+        
+        <div class="contact-terminal-box">
+          <div class="terminal-bar-top">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+            <span class="term-title">COMMUNICATION_LINK // shashank@bit-iot-node:~$</span>
+          </div>
+
+          <div class="terminal-body-inner">
+            <div class="term-line">
+              <span class="term-prompt">user@bit-node:~$</span>
+              <span class="term-cmd">cat contact_directives.md</span>
+            </div>
+            
+            <p class="contact-intro">
+              Whether you are an engineer looking to collaborate on hardware hackathons, a researcher in IoT/systems, or a recruiter seeking a high-drive undergraduate with foundational C & systems acumen — my transmission lines are open.
+            </p>
+
+            <div class="contact-actions-bar">
+              <a href="mailto:shashanknagkompalli@gmail.com" class="hud-btn primary">
+                <span class="btn-crosshair"></span>
+                TRANSMIT EMAIL //&gt;
+              </a>
+
+              <button type="button" class="hud-btn outline" id="copy-email-btn" data-email="shashanknagkompalli@gmail.com">
+                <span class="btn-crosshair"></span>
+                <span id="copy-text">COPY EMAIL [CLIPBOARD]</span>
+              </button>
+            </div>
+
+            <!-- Terminal Social Links -->
+            <div class="terminal-social-cluster">
+              <a href="https://github.com/Progmetalisking" target="_blank" rel="noopener noreferrer" class="term-social-btn">
+                <span class="ts-bracket">[</span> GITHUB: <span class="ts-val">Progmetalisking</span> <span class="ts-bracket">]</span>
+              </a>
+
+              <a href="mailto:shashanknagkompalli@gmail.com" class="term-social-btn">
+                <span class="ts-bracket">[</span> DIRECT_MAIL: <span class="ts-val">shashanknagkompalli@gmail.com</span> <span class="ts-bracket">]</span>
+              </a>
+
+              <a href="https://hackerrank.com" target="_blank" rel="noopener noreferrer" class="term-social-btn">
+                <span class="ts-bracket">[</span> HACKERRANK: <span class="ts-val">Kompalli Shashank Nag</span> <span class="ts-bracket">]</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="term-social-btn">
+                <span class="ts-bracket">[</span> LINKEDIN: <span class="ts-val">Kompalli Shashank Nag</span> <span class="ts-bracket">]</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <p>Designed & built by <strong>Kompalli Shashank Nag</strong></p>
-      <p class="copyright">&copy; 2026 Kompalli Shashank Nag. Bangalore, India.</p>
+  <footer class="hud-footer">
+    <div class="hud-container footer-flex">
+      <div class="footer-left">
+        <span>KOMPALLI SHASHANK NAG // CSE (IoT) • BIT BANGALORE</span>
+      </div>
+      <div class="footer-right">
+        <span>HUD_VERSION: 2.4.9 // PROTOCOL: BLADE_RUNNER_OBSIDIAN</span>
+      </div>
     </div>
   </footer>
 
